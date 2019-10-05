@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import ReviewsContainer from '../../containers/ReviewsContainer'
+import ReviewsContainer from '../../containers/ReviewsContainer';
 
 class Restaurant extends Component {
-
 
   render() {
     const { restaurant } = this.props;
@@ -10,8 +9,8 @@ class Restaurant extends Component {
     return (
       <div>
         <li>
-          {restaurant.text}
-          <button> X </button>
+          {this.props.restaurant.text}
+          <button onClick={() => this.props.delete(this.props.restaurant.id)} > X </button>
           <ReviewsContainer restaurant={restaurant}/>
         </li>
       </div>
